@@ -40,7 +40,7 @@
         <h1>Welcome to the Dashboard</h1>
         <a href="{{ route('register.form') }}" class="btn">Go to Register Page</a>
         <a href="{{ route('users.index') }}" class="btn">View All Users</a>
-        <a href="{{ url('/kelola-pengguna') }}" class="btn">Manage Users via API</a>
+        <a href="{{ url('/api/users') }}" class="btn">API</a>
     </div>
 </body>
 

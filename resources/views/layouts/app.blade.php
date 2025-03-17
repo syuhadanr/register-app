@@ -13,5 +13,18 @@
         @yield('content')
     </div>
 </body>
+<script>
+    fetch('/api/users') // Call your API
+        .then(response => response.json()) // Convert response to JSON
+        .then(data => {
+            let userList = document.getElementById("users-list");
+            data.forEach(user => {
+                let li = document.createElement("li");
+                li.innerHTML = `<strong>${user.nama}</strong> (${user.nik}) - ${user.agama}`;
+                userList.appendChild(li);
+            });
+        })
+        .catch(error => console.error("Error fetching users:", error));
+</script>
 
 </html>

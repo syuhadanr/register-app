@@ -1,11 +1,10 @@
 <?php
+use App\Http\Controllers\API\APIController;
 
-use App\Http\Controllers\UserController;
-use Illuminate\Support\Facades\Route;
 
-Route::get('/users', [UserController::class, 'apiIndex']);      // Get all users
-Route::post('/users', [UserController::class, 'apiStore']);      // Create a user
-Route::get('/users/{id}', [UserController::class, 'apiShow']);   // Get a single user
-Route::put('/users/{id}', [UserController::class, 'apiUpdate']); // Update a user
-Route::delete('/users/{id}', [UserController::class, 'apiDestroy']); // Delete a user
-
+Route::get('/users', [APIController::class, 'index']);
+Route::get('/users', [APIController::class, 'apiIndex']);
+Route::post('/users', [APIController::class, 'apiStore']);
+Route::get('/users/{id}', [APIController::class, 'apiShow']);
+Route::put('/users/{id}', [APIController::class, 'apiUpdate']);
+Route::delete('/users/{id}', [APIController::class, 'apiDestroy']);

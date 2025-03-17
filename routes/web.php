@@ -24,6 +24,6 @@ Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update
 Route::delete('/users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 Route::get('/users/{id}/pdf', [UserController::class, 'generatePDF'])->name('users.pdf');
 
-Route::get('/kelola-pengguna', function () {
-    return view('api_users');
-});
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index'); // Normal web page
+
